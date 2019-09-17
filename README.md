@@ -49,7 +49,7 @@ Now you are ready to [follow the tutorial](https://tdcoinj.github.io/getting-sta
 
 Building apps with official releases of **tdcoinj** is covered in the [tutorial](https://tdcoinj.github.io/getting-started).
 
-If you want to develop or test your app with a [Jitpack](https://jitpack.io)-powered build of the latest `master` or `release-0.15` branch of **tdcoinj** follow the dynamically-generated instructions for that branch by following the correct link.
+If you want to develop or test your app with a [Jitpack](https://jitpack.io)-powered build of the latest `master` branch of **tdcoinj** follow the dynamically-generated instructions for that branch by following the correct link.
 
 
 * [master](https://jitpack.io/#tdcoinj/tdcoinj/master-SNAPSHOT) branch
