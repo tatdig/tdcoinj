@@ -53,4 +53,3 @@ If you want to develop or test your app with a [Jitpack](https://jitpack.io)-pow
 
 
 * [master](https://jitpack.io/#tdcoinj/tdcoinj/master-SNAPSHOT) branch
-* [release-0.15](https://jitpack.io/#tdcoinj/tdcoinj/release-0.15-SNAPSHOT) branch
