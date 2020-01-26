@@ -85,7 +85,7 @@ public class MainNetParams extends AbstractTdcoinNetParams {
 
         //https://www.browserling.com/tools/ip-to-hex
         addrSeeds = new int[] {
-        		0xc0ab12a6
+        		0xc0ab12a6,0x33447d86,0x0dec5923,0x0dd19a59,0x239e9265,0x6c8079df
 	/*
                 0x1ddb1032, 0x6242ce40, 0x52d6a445, 0x2dd7a445, 0x8a53cd47, 0x73263750, 0xda23c257, 0xecd4ed57,
                 0x0a40ec59, 0x75dce160, 0x7df76791, 0x89370bad, 0xa4f214ad, 0x767700ae, 0x638b0418, 0x868a1018,

@@ -48,14 +48,14 @@ public class TestNet3Params extends AbstractTdcoinNetParams {
         maxTarget = Utils.decodeCompactBits(0x1d00ffffL);
         port = 19901;
         addressHeader = 111;
-        p2shHeader = 196;
+        p2shHeader = 68;
         dumpedPrivateKeyHeader = 239;
         segwitAddressHrp = "tt";
         genesisBlock.setTime(1555135009L);
         genesisBlock.setDifficultyTarget(0x1d00ffffL);
         genesisBlock.setNonce(168577915);
         spendableCoinbaseDepth = 100;
-        subsidyDecreaseBlockCount = 210000;
+        subsidyDecreaseBlockCount = 20000000;
         String genesisHash = genesisBlock.getHashAsString();
         checkState(genesisHash.equals("00000000ca704e9118579962d0b0f361bf9cf99589ef78cf288e90f16008e8aa"));
 //        alertSigningKey = Utils.HEX.decode("04302390343f91cc401d56d68b123028bf52e5fca1939df127f63c6467cdf9c8e2c14b61104cf817d0b780da337893ecc4aaff1309e536162dabbdb45200ca2b0a");

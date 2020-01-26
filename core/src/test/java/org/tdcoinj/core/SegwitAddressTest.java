@@ -204,7 +204,7 @@ public class SegwitAddressTest {
 
     @Test(expected = AddressFormatException.InvalidDataLength.class)
     public void fromBech32_tooLong() {
-        SegwitAddress.fromBech32(null, "tc10w508d6qejxtdg4y5r3zarvary0c5xw7kw508d6qejxtdg4y5r3zarvary0c5xw7kw5rljs90");
+        SegwitAddress.fromBech32(null, "tc10w508d6qejxtdg4y5r3z34arvary0c5xw7kw508d6qejxtdg4y5r3zarvary0c5xw7kw5rljs90");
     }
 
     @Test(expected = AddressFormatException.InvalidPrefix.class)

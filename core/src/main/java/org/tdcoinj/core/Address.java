@@ -44,7 +44,7 @@ public abstract class Address extends PrefixedChecksummedBytes {
      *            textual form
      * @param str
      *            the textual form of the address, such as "17kzeh4N8g49GFvdDzSf8PjaPfyoD1MndL" or
-     *            "bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4"
+     *            "tc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4"
      * @return constructed address
      * @throws AddressFormatException
      *             if the given string doesn't parse or the checksum is invalid

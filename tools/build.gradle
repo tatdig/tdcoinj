@@ -29,3 +29,11 @@ task build_checkpoints(type: JavaExec) {
         args = Arrays.asList(appArgs.split("\\s+"))
     classpath = sourceSets.main.runtimeClasspath
 }
+
+task block_importer(type: JavaExec) {
+    description = 'Block importer.'
+    main = 'org.tdcoinj.tools.BlockImporter'
+    if (project.hasProperty('appArgs') && appArgs.length() > 0)
+        args = Arrays.asList(appArgs.split("\\s+"))
+    classpath = sourceSets.main.runtimeClasspath
+}

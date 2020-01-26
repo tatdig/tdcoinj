@@ -20,6 +20,7 @@ package org.tdcoinj.tools;
 import org.tdcoinj.core.listeners.NewBestBlockListener;
 import org.tdcoinj.core.*;
 import org.tdcoinj.net.discovery.DnsDiscovery;
+import org.tdcoinj.net.discovery.SeedPeers;
 import org.tdcoinj.params.MainNetParams;
 import org.tdcoinj.params.RegTestParams;
 import org.tdcoinj.params.TestNet3Params;
@@ -102,6 +103,7 @@ public class BuildCheckpoints {
 
         // DNS discovery can be used for some networks
         boolean networkHasDnsSeeds = params.getDnsSeeds() != null;
+        boolean networkHasIpSeeds = params.getAddrSeeds() != null;
         if (options.has("peer")) {
             // use peer provided in argument
             String peerFlag = (String) options.valueOf("peer");
@@ -113,7 +115,19 @@ public class BuildCheckpoints {
                 System.exit(1);
                 return;
             }
-        } else if (networkHasDnsSeeds) {
+        }/*else if (networkHasIpSeeds) {
+            // for PROD and TEST use a peer group discovered with dns
+            peerGroup.setUserAgent("PeerMonitor", "1.0");
+            peerGroup.setMaxConnections(20);
+            peerGroup.addPeerDiscovery(new SeedPeers(params));
+            peerGroup.start();
+
+            // Connect to at least 4 peers because some may not support download
+            Future<List<Peer>> future = peerGroup.waitForPeers(4);
+            System.out.println("Connecting to " + params.getId() + ", timeout 120 seconds...");
+            // throw timeout exception if we can't get peers
+            future.get(20, SECONDS);
+        }*/else if (networkHasDnsSeeds) {
             // for PROD and TEST use a peer group discovered with dns
             peerGroup.setUserAgent("PeerMonitor", "1.0");
             peerGroup.setMaxConnections(20);
@@ -222,15 +236,15 @@ public class BuildCheckpoints {
         checkState(manager.numCheckpoints() == expectedSize);
 
         if (params.getId().equals(NetworkParameters.ID_MAINNET)) {
-            StoredBlock test = manager.getCheckpointBefore(1390500000); // Thu Jan 23 19:00:00 CET 2014
-            checkState(test.getHeight() == 280224);
+            StoredBlock test = manager.getCheckpointBefore(1580014332); // TDCOIN
+            checkState(test.getHeight() == 36288); // TDCOIN
             checkState(test.getHeader().getHashAsString()
-                    .equals("00000000000000000b5d59a15f831e1c45cb688a4db6b0a60054d49a9997fa34"));
+                    .equals("0000000000194e0c75fb89294bdf897b3b38b58ef8918395f3be20e37a58833f")); // TDCOIN
         } else if (params.getId().equals(NetworkParameters.ID_TESTNET)) {
-            StoredBlock test = manager.getCheckpointBefore(1390500000); // Thu Jan 23 19:00:00 CET 2014
-            checkState(test.getHeight() == 167328);
+            StoredBlock test = manager.getCheckpointBefore(1580014332); // Thu Jan 23 19:00:00 CET 2014
+            checkState(test.getHeight() == 17136);
             checkState(test.getHeader().getHashAsString()
-                    .equals("0000000000035ae7d5025c2538067fe7adb1cf5d5d9c31b024137d9090ed13a9"));
+                    .equals("000000000025f9caa90163507ae554ebbf7968d53deb5af862854fccb3487a21"));
         }
     }
 

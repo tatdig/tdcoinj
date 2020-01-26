@@ -1,4 +1,4 @@
-""#!/bin/bash
+#!/bin/bash
 
 # Copyright by the original author or authors.
 #
@@ -16,4 +16,5 @@
 
 set -e
 args="$@"
-gradle -q --no-daemon --console=plain build_checkpoints "-PappArgs=$args"
+../gradlew -q --no-daemon --console=plain build_checkpoints net TESTNET
+../gradlew -q --no-daemon --console=plain build_checkpoints net MAINNET

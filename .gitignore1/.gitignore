@@ -1,0 +1,17 @@
+local.properties
+target
+build
+.gradle
+gradlew
+gradlew.bat
+gradle/wrapper
+.project
+.classpath
+.settings
+bin/
+.idea
+*.iml
+out/
+*.chain
+*.spvchain
+*.class
